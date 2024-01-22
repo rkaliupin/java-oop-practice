@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8dfafe72-76bf-41b6-9218-e498fbecc524" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/board/ToDoBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/boardmanager/BoardMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/boardmanager/ToDoBoardMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/category/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/category/SimpleCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/permission/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/permission/PermissionBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/permission/PermissionConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleUpdateListeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleUpdateMgr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/task/SimpleTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/task/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/rk/oop/practice/todolist/AppTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2asNBQ18QN2UOt1T6m5o4WjHnNn" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-2f79fb23" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8dfafe72-76bf-41b6-9218-e498fbecc524" name="Changes" comment="" />
+      <created>1705103192348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705103192348</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleMgr.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
