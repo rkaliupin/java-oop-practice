@@ -21,10 +21,6 @@ public class User implements RoleUpdateListeners {
         this.email = email;
     }
 
-    public void addRole(Role role) {
-        this.roles.put(role.getId(), role);
-    }
-
     @Override
     public void updateRole(Role role) {
        this.roles.put(role.getId(), role);
@@ -32,12 +28,12 @@ public class User implements RoleUpdateListeners {
 
     @Override
     public void assignRole(Role role) {
-
+        this.roles.put(role.getId(), role);
     }
 
     @Override
     public void unAssignRole(Role role) {
-
+        this.roles.remove(role.getId());
     }
 
     /*public void assignToBoard(Board board) {

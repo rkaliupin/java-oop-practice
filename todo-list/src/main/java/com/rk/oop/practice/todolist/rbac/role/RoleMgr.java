@@ -13,10 +13,11 @@ import java.util.MissingResourceException;
  */
 public class RoleMgr {
     private HashMap<String, Role> roles;
-    private PermissionBuilder permissionBuilder;
-    private RoleUpdateMgr roleUpdateMgr;
+    private final PermissionBuilder permissionBuilder;
+    private final RoleUpdateMgr roleUpdateMgr;
+    private static RoleMgr roleMgr;
 
-    public RoleMgr() {
+    private RoleMgr() {
         this.permissionBuilder = PermissionBuilder.getInstance();
         this.roleUpdateMgr = new RoleUpdateMgr();
 
@@ -26,8 +27,18 @@ public class RoleMgr {
         this.buildDeveloperRole();
     }
 
+    public static RoleMgr getInstance() {
+        if (roleMgr == null) {
+            roleMgr = new RoleMgr();
+        }
+        return roleMgr;
+    }
+
     public Role getRoleById(String roleId) {
-        return this.roles.getOrDefault(roleId, null);
+        if (!this.roles.containsKey(roleId)) {
+            throw new MissingResourceException("The Role with passed ID: " + roleId + ", doesn't exists", "Role", roleId);
+        }
+        return this.roles.get(roleId);
     }
 
     public void createRole(String roleId) {
@@ -49,11 +60,7 @@ public class RoleMgr {
     }
 
     public void addPermissionToRole(String roleId, String permissionId) {
-        if (!this.roles.containsKey(roleId)) {
-            throw new MissingResourceException("The Role with passed ID: " + roleId + ", doesn't exists", "Role", roleId);
-        }
-
-        Role roleToExtend = this.roles.get(roleId);
+        Role roleToExtend = this.getRoleById(roleId);
 
         if (!roleToExtend.hasPermission(permissionId)) {
             roleToExtend.addPermission(this.permissionBuilder.getPermissionById(permissionId));
