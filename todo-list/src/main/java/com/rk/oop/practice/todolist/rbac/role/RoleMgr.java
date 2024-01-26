@@ -49,12 +49,12 @@ public class RoleMgr {
         this.roles.put(roleId, new Role(roleId));
     }
 
-    public void assignRoleToUser(RoleUpdateListeners roleUpdateListener, Role role) {
+    public void assignRoleToUser(RbacUser roleUpdateListener, Role role) {
         this.roleUpdateMgr.subscribe(role.getId(), roleUpdateListener);
         roleUpdateListener.assignRole(role);
     }
 
-    public void unAssignRoleFromUser(RoleUpdateListeners roleUpdateListener, Role role) {
+    public void unAssignRoleFromUser(RbacUser roleUpdateListener, Role role) {
         this.roleUpdateMgr.unsubscribe(role.getId(), roleUpdateListener);
         roleUpdateListener.unAssignRole(role);
     }
@@ -64,7 +64,7 @@ public class RoleMgr {
 
         if (!roleToExtend.hasPermission(permissionId)) {
             roleToExtend.addPermission(this.permissionBuilder.getPermissionById(permissionId));
-            // Update all RoleUpdateListeners with role with new permissions
+            // Update all RbacUser with role with new permissions
             this.roleUpdateMgr.notify(roleToExtend.getId(), roleToExtend);
         }
     }
@@ -77,7 +77,7 @@ public class RoleMgr {
 
         if (!roleToExtend.hasPermission(permissionId)) {
             roleToExtend.removePermission(permissionId);
-            // Update all RoleUpdateListeners with role with new permissions
+            // Update all RbacUser with role with new permissions
             this.roleUpdateMgr.notify(roleToExtend.getId(), roleToExtend);
         }
     }

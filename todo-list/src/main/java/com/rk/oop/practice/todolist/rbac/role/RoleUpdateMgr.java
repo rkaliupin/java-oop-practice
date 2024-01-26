@@ -4,26 +4,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class RoleUpdateMgr {
-    private HashMap<String, ArrayList<RoleUpdateListeners>> roleUpdateListeners = new HashMap<>();
+    private HashMap<String, ArrayList<RbacUser>> RbacUser = new HashMap<>();
 
-    public void subscribe(String roleId, RoleUpdateListeners roleUpdateListener) {
-        ArrayList<RoleUpdateListeners> roleUpdateListeners = this.roleUpdateListeners.get(roleId);
+    public void subscribe(String roleId, RbacUser roleUpdateListener) {
+        ArrayList<RbacUser> RbacUser = this.RbacUser.get(roleId);
 
-        if (roleUpdateListeners == null) {
-            roleUpdateListeners = new ArrayList<>();
+        if (RbacUser == null) {
+            RbacUser = new ArrayList<>();
         }
-        roleUpdateListeners.add(roleUpdateListener);
+        RbacUser.add(roleUpdateListener);
 
-        this.roleUpdateListeners.put(roleId, roleUpdateListeners);
+        this.RbacUser.put(roleId, RbacUser);
     }
 
-    public void unsubscribe(String roleId, RoleUpdateListeners roleUpdateListener) {
-        this.roleUpdateListeners.remove(roleId, roleUpdateListener);
+    public void unsubscribe(String roleId, RbacUser roleUpdateListener) {
+        this.RbacUser.remove(roleId, roleUpdateListener);
     }
 
     public void notify(String roleId, Role role) {
-        if (this.roleUpdateListeners.containsKey(roleId)) {
-            this.roleUpdateListeners.get(roleId).forEach(listener -> {
+        if (this.RbacUser.containsKey(roleId)) {
+            this.RbacUser.get(roleId).forEach(listener -> {
                 listener.updateRole(role);
             });
         }

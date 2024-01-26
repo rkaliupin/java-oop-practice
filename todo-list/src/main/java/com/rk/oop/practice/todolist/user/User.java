@@ -2,13 +2,13 @@ package com.rk.oop.practice.todolist.user;
 
 import com.rk.oop.practice.todolist.board.Board;
 import com.rk.oop.practice.todolist.rbac.role.Role;
-import com.rk.oop.practice.todolist.rbac.role.RoleUpdateListeners;
+import com.rk.oop.practice.todolist.rbac.role.RbacUser;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class User implements RoleUpdateListeners {
+public class User implements RbacUser {
     private String id;
     private String name;
     private String email;
