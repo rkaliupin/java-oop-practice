@@ -14,13 +14,18 @@ public class Role {
     }
 
     public void addPermission(Permission permission) {
-        this.permissions.put(permission.getId(), permission);
+        this.permissions.put(permission.getType(), permission);
     }
     public void removePermission(String permissionId) {
         this.permissions.remove(permissionId);
     }
-    public Boolean hasPermission(String permissionId) {
-        return this.permissions.containsKey(permissionId);
+    public Boolean hasPermission(String permissionId, String resourceId) {
+        Permission permission = this.permissions.getOrDefault(permissionId, null);
+        return permission != null && permission.hasResource(resourceId);
+    }
+    public Boolean hasCreatePermission(String permissionId) {
+        Permission permission = this.permissions.getOrDefault(permissionId, null);
+        return permission != null;
     }
     public String getId() {
         return this.id;

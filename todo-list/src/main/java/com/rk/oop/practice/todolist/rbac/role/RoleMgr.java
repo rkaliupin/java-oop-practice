@@ -59,23 +59,23 @@ public class RoleMgr {
         roleUpdateListener.unAssignRole(role);
     }
 
-    public void addPermissionToRole(String roleId, String permissionId) {
+    public void addPermissionToRole(String roleId, String permissionId, String resourceId) {
         Role roleToExtend = this.getRoleById(roleId);
 
-        if (!roleToExtend.hasPermission(permissionId)) {
+        if (!roleToExtend.hasPermission(permissionId, resourceId)) {
             roleToExtend.addPermission(this.permissionBuilder.getPermissionById(permissionId));
             // Update all RbacUser with role with new permissions
             this.roleUpdateMgr.notify(roleToExtend.getId(), roleToExtend);
         }
     }
-    public void removePermissionFomRole(String roleId, String permissionId) {
+    public void removePermissionFomRole(String roleId, String permissionId, String resourceId) {
         if (!this.roles.containsKey(roleId)) {
             throw new MissingResourceException("The Role with passed ID: " + roleId + ", doesn't exists", "Role", roleId);
         }
 
         Role roleToExtend = this.roles.get(roleId);
 
-        if (!roleToExtend.hasPermission(permissionId)) {
+        if (!roleToExtend.hasPermission(permissionId, resourceId)) {
             roleToExtend.removePermission(permissionId);
             // Update all RbacUser with role with new permissions
             this.roleUpdateMgr.notify(roleToExtend.getId(), roleToExtend);

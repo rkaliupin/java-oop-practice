@@ -1,13 +1,26 @@
 package com.rk.oop.practice.todolist.rbac.permission;
 
-public class Permission {
-    private final String id;
+import java.util.ArrayList;
 
-    public Permission (String id) {
-        this.id = id;
+public class Permission {
+    private final String type;
+    private final ArrayList<String> resources;
+
+    public Permission (String type) {
+        this.resources = new ArrayList<>();
+        this.type = type;
     }
 
-    public String getId() {
-        return id;
+    public String getType() {
+        return type;
+    }
+    public void addResource(String resourceId) {
+        this.resources.add(resourceId);
+    }
+    public boolean hasResource(String resourceId) {
+        return this.resources.contains(resourceId);
+    }
+    public ArrayList<String> getResources() {
+        return this.resources;
     }
 }

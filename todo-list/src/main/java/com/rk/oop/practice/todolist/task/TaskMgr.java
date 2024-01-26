@@ -1,6 +1,8 @@
 package com.rk.oop.practice.todolist.task;
 
 import com.rk.oop.practice.todolist.board.Board;
+import com.rk.oop.practice.todolist.rbac.errors.RbacErrorHandler;
+import com.rk.oop.practice.todolist.rbac.permission.PermissionConstants;
 import com.rk.oop.practice.todolist.user.User;
 
 import java.util.HashMap;
@@ -20,6 +22,11 @@ public class TaskMgr {
     }
 
     public Task createTask(User user, Board board, String title, User assignedFrom, User assignedTo) {
+        if (!user.hasPermission(PermissionConstants.CREATE_TASK, board.getName())) {
+            RbacErrorHandler.accessDeniedError(user, PermissionConstants.CREATE_TASK, board.getName());
+            return null;
+        }
+
         String boardName = board.getName();
         Integer taskId = this.getNextTaskId(board);
         Task newTask = new SimpleTask(title, assignedFrom, assignedTo, taskId);
