@@ -15,6 +15,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RbacUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RbacUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/rbac/role/RoleMgr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/task/TaskMgr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/task/TaskMgr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rk/oop/practice/todolist/user/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
