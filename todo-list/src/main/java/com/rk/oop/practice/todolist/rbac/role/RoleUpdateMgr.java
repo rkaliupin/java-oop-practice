@@ -6,19 +6,19 @@ import java.util.HashMap;
 public class RoleUpdateMgr {
     private HashMap<String, ArrayList<RbacUser>> RbacUser = new HashMap<>();
 
-    public void subscribe(String roleId, RbacUser roleUpdateListener) {
+    public void subscribe(String roleId, RbacUser rbacUser) {
         ArrayList<RbacUser> RbacUser = this.RbacUser.get(roleId);
 
         if (RbacUser == null) {
             RbacUser = new ArrayList<>();
         }
-        RbacUser.add(roleUpdateListener);
+        RbacUser.add(rbacUser);
 
         this.RbacUser.put(roleId, RbacUser);
     }
 
-    public void unsubscribe(String roleId, RbacUser roleUpdateListener) {
-        this.RbacUser.remove(roleId, roleUpdateListener);
+    public void unsubscribe(String roleId, RbacUser rbacUser) {
+        this.RbacUser.remove(roleId, rbacUser);
     }
 
     public void notify(String roleId, Role role) {

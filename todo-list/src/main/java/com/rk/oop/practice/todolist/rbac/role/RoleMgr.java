@@ -49,14 +49,14 @@ public class RoleMgr {
         this.roles.put(roleId, new Role(roleId));
     }
 
-    public void assignRoleToUser(RbacUser roleUpdateListener, Role role) {
-        this.roleUpdateMgr.subscribe(role.getId(), roleUpdateListener);
-        roleUpdateListener.assignRole(role);
+    public void assignRoleToUser(RbacUser rbacUser, Role role) {
+        this.roleUpdateMgr.subscribe(role.getId(), rbacUser);
+        rbacUser.assignRole(role);
     }
 
-    public void unAssignRoleFromUser(RbacUser roleUpdateListener, Role role) {
-        this.roleUpdateMgr.unsubscribe(role.getId(), roleUpdateListener);
-        roleUpdateListener.unAssignRole(role);
+    public void unAssignRoleFromUser(RbacUser rbacUser, Role role) {
+        this.roleUpdateMgr.unsubscribe(role.getId(), rbacUser);
+        rbacUser.unAssignRole(role);
     }
 
     public void addPermissionToRole(String roleId, String permissionId, String resourceId) {

@@ -1,13 +1,28 @@
 package com.rk.oop.practice.todolist.user;
 
-import com.rk.oop.practice.todolist.rbac.role.RbacUserMgr;
-import com.rk.oop.practice.todolist.rbac.role.RoleMgr;
+import java.util.ArrayList;
 
 /**
  * Idea of this class is to mock user create in DB.
  */
-public class UserMgr extends RbacUserMgr {
-    public static User createUser(String name, String email) {
-        return new User(name, email);
+public class UserMgr {
+    private static UserMgr userMgr;
+    private ArrayList<User> users;
+
+    private UserMgr() {}
+
+    public static UserMgr getInstance() {
+        if (userMgr == null) {
+            userMgr = new UserMgr();
+        }
+        return userMgr;
+    }
+
+    public User createUser(String name, String email) {
+        User user = new User(name, email);
+
+        this.users.add(user);
+
+        return user;
     }
 }
