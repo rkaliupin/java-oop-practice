@@ -9,17 +9,17 @@ import java.util.Stack;
 public class Calculator {
     private Stack<Command> commandStack;
     private double result = 0;
-    private Calculator calculator;
+    private static Calculator calculator;
 
-    public Calculator() {
+    private Calculator() {
         this.commandStack = new Stack<>();
     }
 
-    public Calculator getInstance() {
-        if (this.calculator == null) {
-            this.calculator = new Calculator();
+    public static Calculator getInstance() {
+        if (calculator == null) {
+            calculator = new Calculator();
         }
-        return this.calculator;
+        return calculator;
     }
 
     public double getResult() {
